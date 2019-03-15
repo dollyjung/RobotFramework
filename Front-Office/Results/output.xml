@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190314 10:56:39.802" rpa="false">
+<suite id="s1" name="TestCommand" source="D:\User_data\robot-scripts\Front-Office\Scripts\TestCommand.robot">
+<test id="s1-t1" name="Dialogs message">
+<kw name="Get Selection From User" library="Dialogs">
+<doc>Pauses test execution and asks user to select a value.</doc>
+<arguments>
+<arg>Select browser to use</arg>
+<arg>Edge</arg>
+<arg>Firefox</arg>
+<arg>Chrome</arg>
+</arguments>
+<assign>
+<var>${new_browser}</var>
+</assign>
+<msg timestamp="20190314 10:56:42.958" level="INFO">${new_browser} = Chrome</msg>
+<status status="PASS" starttime="20190314 10:56:40.036" endtime="20190314 10:56:42.958"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+<arg>${new_browser}</arg>
+</arguments>
+<msg timestamp="20190314 10:56:42.960" level="INFO">${BROWSER} = Chrome</msg>
+<status status="PASS" starttime="20190314 10:56:42.959" endtime="20190314 10:56:42.960"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190314 10:56:42.960" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20190314 10:56:42.960" endtime="20190314 10:56:45.521"></status>
+</kw>
+<kw name="Get Value From User" library="Dialogs">
+<doc>Pauses test execution and asks user to input a value.</doc>
+<arguments>
+<arg>username to test please</arg>
+<arg>default</arg>
+</arguments>
+<assign>
+<var>${input_username}</var>
+</assign>
+<msg timestamp="20190314 10:56:47.678" level="INFO">${input_username} = default</msg>
+<status status="PASS" starttime="20190314 10:56:45.521" endtime="20190314 10:56:47.678"></status>
+</kw>
+<kw name="Get Value From User" library="Dialogs">
+<doc>Pauses test execution and asks user to input a value.</doc>
+<arguments>
+<arg>password please</arg>
+<arg>hidden=yes</arg>
+</arguments>
+<assign>
+<var>${input_password}</var>
+</assign>
+<msg timestamp="20190314 10:56:48.606" level="INFO">${input_password} = </msg>
+<status status="PASS" starttime="20190314 10:56:47.679" endtime="20190314 10:56:48.607"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://www.google.com</arg>
+</arguments>
+<msg timestamp="20190314 10:56:48.608" level="INFO">Opening url 'http://www.google.com'</msg>
+<status status="PASS" starttime="20190314 10:56:48.607" endtime="20190314 10:56:52.498"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class="gLFyf gsfi"]</arg>
+<arg>${input_username}</arg>
+</arguments>
+<msg timestamp="20190314 10:56:52.499" level="INFO">Typing text 'default' into text field 'xpath=//*[@class="gLFyf gsfi"]'.</msg>
+<status status="PASS" starttime="20190314 10:56:52.499" endtime="20190314 10:56:52.588"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>hidden password: ${input_password}</arg>
+</arguments>
+<status status="PASS" starttime="20190314 10:56:52.589" endtime="20190314 10:56:52.589"></status>
+</kw>
+<tags>
+<tag>dialogs</tag>
+</tags>
+<status status="PASS" starttime="20190314 10:56:40.035" endtime="20190314 10:56:52.590" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190314 10:56:39.809" endtime="20190314 10:56:52.591"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">dialogs</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="TestCommand">TestCommand</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
